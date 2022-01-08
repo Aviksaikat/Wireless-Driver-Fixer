@@ -9,8 +9,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-git clone https://github.com/lwfinger/rtw89.git -C /tmp/
-cd rtw89
+git clone https://github.com/lwfinger/rtw89.git /tmp/rtw89
+cd /tmp/rtw89
 make
 sudo make install
 
