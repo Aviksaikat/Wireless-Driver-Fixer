@@ -9,9 +9,17 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-git clone https://github.com/lwfinger/rtw89.git /tmp/rtw89
-cd /tmp/rtw89
-make
-sudo make install
+if [ $(hostname) == "hp-pavilion-15" ];
+then 
+   cd /home/avik/tools/rtw89
+   make
+   sudo make install
+   sudo reboot
+else
+   git clone https://github.com/lwfinger/rtw89.git /tmp/rtw89
+   cd /tmp/rtw89
+   make
+   sudo make install
+fi
 
 echo "${RED}If successful, reboot to see the magic unless read Readme${NC}"
