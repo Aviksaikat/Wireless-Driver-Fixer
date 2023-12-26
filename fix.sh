@@ -9,7 +9,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-if [ $(hostname) == "hp-pavilion-15" ];
+if [ $(hostname) == "kali" ];
 then 
    cd /home/avik/tools/rtw89
    make
